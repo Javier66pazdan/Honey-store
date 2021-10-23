@@ -1,0 +1,26 @@
+{
+  "name": "honeyproject",
+  "version": "1.0.0",
+  "description": "Store where you can buy a jar of honey. (Or couple)",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Javier66pazdan/Honey-store.git"
+  },
+  "keywords": [
+    "honey",
+    "store"
+  ],
+  "author": "Gabriel Pazdan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Javier66pazdan/Honey-store/issues"
+  },
+  "homepage": "https://github.com/Javier66pazdan/Honey-store#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
