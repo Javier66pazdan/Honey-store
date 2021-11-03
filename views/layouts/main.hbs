@@ -32,8 +32,8 @@
                     <a href="/">Kontakt</a>
                 </li>
                 <li class="nav-item">
-                    {{#if loggedIn}}
-                        <button type="button" class="btn btn-warning">Wyloguj</button>
+                    {{#if login}}
+                        <a href="/logout"><button type="button" class="btn btn-warning">Wyloguj</button></a>
                       {{else}}
                         <a href="/login"><button type="button" class="btn btn-warning">Zaloguj lub zarejestruj się</button></a>
                     {{/if}}

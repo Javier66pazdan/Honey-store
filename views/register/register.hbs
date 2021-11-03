@@ -1,17 +1,21 @@
 <section class="register-section">
     <div class="register-division">
         <h4>Rejestracja</h4>
-        <form action="" class="form">
+        {{> register-messages}}
+        <form action="/register" method="POST" class="form">
             <label for="username">Nazwa użytkownika:</label>
-            <input type="text" name="username" id="username" required minlength="5" maxlength="32" placeholder="Nazwa użytkownika">
+            <input type="text" name="username" id="username" required minlength="5" maxlength="32" placeholder="Nazwa użytkownika" value="{{setValue username}}">
             <label for="email">Email: </label>
-            <input type="email" name="email" required maxlength="32" minlength="5" placeholder="Email">
+            <input type="email" name="email" required maxlength="32" minlength="5" placeholder="Email" value="{{setValue email}}">
             <label for="password">Hasło</label>
-            <input type="password" name="password" required maxlength="32" minlength="8" placeholder="Hasło">
+            <input type="password" name="password" required maxlength="32" minlength="8" placeholder="Hasło" value="{{setValue password}}">
+            <label for="confirm-password">Potwierdź hasło</label>
+            <input type="password" name="confirmPassword" required maxlength="32"
+                   minlength="8" placeholder="Potwierdź hasło" value="{{setValue confirmPassword}}">
             <div class="align-right">
                 <button type="submit">Zarejestruj się</button>
             </div>
         </form>
-        <a href="/login">Masz już konto? Zaloguj się.</a>
+        Masz już konto? <a href="/login"> Zaloguj się.</a>
     </div>
 </section>

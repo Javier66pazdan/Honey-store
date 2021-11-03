@@ -1,15 +1,16 @@
 <section class="login-section">
     <div class="login-division">
         <h4>Logowanie</h4>
-        <form action="" class="form">
+        {{> login-messages}}
+        <form action="/login" method="POST" class="form">
             <label for="username">Email: </label>
-            <input type="email" name="email" required maxlength="32" minlength="5" placeholder="Email">
+            <input type="email" name="email" id="email" class="form-control" required maxlength="32" minlength="5" placeholder="Email">
             <label for="password">Hasło</label>
-            <input type="password" name="password" required maxlength="32" minlength="8" placeholder="Hasło">
+            <input type="password" name="password" class="form-control" required maxlength="32" minlength="8" placeholder="Hasło">
             <div class="align-right">
                 <button type="submit">Zaloguj się</button>
             </div>
         </form>
-        <a href="/register">Nie masz konta? Zarejestruj się</a>
+        Nie masz konta? <a href="/register"> Zarejestruj się</a>
     </div>
 </section>
