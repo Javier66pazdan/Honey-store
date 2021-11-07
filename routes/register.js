@@ -27,13 +27,15 @@ registerRouter
     }
 
     if (errors.length > 0) {
-      res.render('register/register', {
-        errors,
-        username,
-        email,
-        password,
-        confirmPassword,
-      });
+      res
+        .status(400)
+        .render('register/register', {
+          errors,
+          username,
+          email,
+          password,
+          confirmPassword,
+        });
     } else {
       // validation passed
       User.findOne({ email: email })
@@ -66,7 +68,9 @@ registerRouter
                 // eslint-disable-next-line no-unused-vars
                   .then((u) => {
                     req.flash('success_msg', 'Rejestracja przebiegła pomyślnie, możesz się zalogować.');
-                    res.redirect('/login');
+                    res
+                      .status(201)
+                      .redirect('/login');
                   })
                   .catch((e) => console.error(e));
               });
