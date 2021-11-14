@@ -1,0 +1,26 @@
+.jar-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.jar-title, .jar-price {
+  color: #8f3e3f;
+}
+
+.jar-title {
+  font-size: 2.3rem;
+}
+
+.jar-price{
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.product-nav button{
+  color: #8f3e3f;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}

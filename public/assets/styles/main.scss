@@ -1,0 +1,25 @@
+@use './utilities/variables' as *;
+@use './layout/footer';
+@use './layout/header';
+@use './pages/basket';
+@use './pages/contact';
+@use './pages/home';
+@use './pages/login';
+@use './pages/product';
+@use './pages/register';
+@use './pages/store';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main{
+  /*background: url("../images/bg.jpg") no-repeat center center fixed;*/
+
+  /*background-size: cover;*/
+  min-height: 100vh;
+  /*background: #fa9a50;*/
+}
