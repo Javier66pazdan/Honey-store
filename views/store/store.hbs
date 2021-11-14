@@ -1,4 +1,29 @@
-<h1>Test
-{{#if name}}
-    {{name}}
-{{/if}}</h1>
+<div class="container store-container">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1 class="page-title">Sklep</h1>
+        </div>
+    </div>
+
+    <div class="row products">
+        {{#each jars}}
+            <div class="col-md-4">
+                <div class="product-thumbnail-wrapper">
+                    <a href="/store/product/{{this.name}}" class="product-link">
+                        <div class="product-thumbnail">
+                            <span class="product-thumbnail-background"></span>
+                            <img src="{{this.img}}" alt="{{this.title}}" loading="lazy">
+                        </div>
+                    </a>
+                </div>
+                <div class="product-title">
+                    <a href="/store/product/{{this.name}}">{{this.title}}</a>
+                </div>
+                <div class="product-after-shop-loop">
+                    <span class="price">{{priceify this.price}} zł</span>
+                    <a href="" data-quantity="1" data-product-id="{{this.id}}" class="add-to-cart-button">Dodaj do koszyka</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

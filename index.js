@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const cookieParser = require('cookie-parser');
 const { homeRouter } = require('./routes/home');
 const { storeRouter } = require('./routes/store');
 const { loginRouter } = require('./routes/login');
 const { registerRouter } = require('./routes/register');
 const { handlebarsHelpers } = require('./utils/handlebars-helpers');
 const { logoutRouter } = require('./routes/logout');
+const { basketRouter } = require('./routes/basket');
 
 const app = express();
 
@@ -28,6 +30,7 @@ mongoose.connect(db, { useNewUrlParser: true })
 // Middlewares
 app.use(express.json());
 app.use(express.static('public'));
+app.use(cookieParser());
 app.engine('.hbs', hbs({
   extname: '.hbs',
   helpers: handlebarsHelpers,
@@ -64,5 +67,6 @@ app.use('/store', storeRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/logout', logoutRouter);
+app.use('/basket', basketRouter);
 
 app.listen(PORT);

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-md-8">
+            <img src="{{jar.img}}" alt="{{jar.title}}" class="jar-image">
+        </div>
+        <div class="col-md-4">
+            <h2 class="jar-title">{{jar.title}}</h2>
+            <p class="jar-price">{{priceify jar.price}} zł</p>
+            <p>{{jar.description}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <nav class="product-nav">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Opis</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Dodatkowe informacje</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    {{jar.healthProperties}}
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <table>
+                        <tr>
+                            <th>Waga</th>
+                            <td>1kg</td>
+                        </tr>
+                        <tr>
+                            <th>Pojemność</th>
+                            <td>Duży</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

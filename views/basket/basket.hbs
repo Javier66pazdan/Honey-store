@@ -1,0 +1,16 @@
+<div class="container basket-container">
+    <h2>Twoje produkty:</h2>
+    {{#unless products}}
+        <h5>Dodaj produkty do koszyka, aby zobaczyć jego zawartość.</h5>
+    {{/unless}}
+    <p>
+        <ul>
+        {{#each products}}
+            <li>
+                {{id}} oraz nazwa {{quantity}}
+            </li>
+        {{/each}}
+        </ul>
+    <h2>{{sum}}</h2>
+    </p>
+</div>

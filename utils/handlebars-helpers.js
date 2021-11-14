@@ -1,6 +1,6 @@
 const handlebarsHelpers = {
   setValue: (value) => (typeof value !== 'undefined' ? value : ''),
-  // eslint-disable-next-line no-undef,camelcase
+  priceify: (price) => price.toFixed(2),
 };
 
 module.exports = {
