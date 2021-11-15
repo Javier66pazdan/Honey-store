@@ -7,6 +7,8 @@
             <h2 class="jar-title">{{jar.title}}</h2>
             <p class="jar-price">{{priceify jar.price}} zł</p>
             <p>{{jar.description}}</p>
+            <p><input type="number" class="product-quantity-input"></p>
+            <p><button class="order-btn" data-id="{{jar.id}}">Dodaj do koszyka</button></p>
         </div>
     </div>
     <div class="row">
@@ -37,3 +39,5 @@
         </div>
     </div>
 </div>
+
+<script src="/js/handleAddToBasket.js"></script>

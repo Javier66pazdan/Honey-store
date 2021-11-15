@@ -1,10 +1,10 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const hbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
-const cookieParser = require('cookie-parser');
 const { homeRouter } = require('./routes/home');
 const { storeRouter } = require('./routes/store');
 const { loginRouter } = require('./routes/login');

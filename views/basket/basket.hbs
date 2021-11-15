@@ -12,7 +12,7 @@
                         <tbody>
                             <tr class="cart-table-row">
                                 <td class="product-remove">
-                                    <span class="remove"><a href="">x</a></span>
+                                    <span class="remove" data-product-id="{{id}}"><a href="">x</a></span>
                                 </td>
                                 <td class="product-thumbnail">
                                     <img src="{{img}}" alt="{{title}}">
@@ -24,7 +24,7 @@
                                     {{priceify price}}
                                 </td>
                                 <td class="product-quantity">
-                                    <input type="number" value="{{quantity}}" onkeyup="this.value=this.value.replace(/[^\d]/,'')" step="1" min="0" max="30" title="Ilość" size="3" inputmode="numeric" placeholder>
+                                    <input type="number" class="quantity" data-id="{{id}}" value="{{quantity}}" onkeyup="this.value=this.value.replace(/[^\d]/,'')" step="1" min="0" max="30" title="Ilość" size="3" inputmode="numeric" placeholder>
                                 </td>
                                 <td class="product-total">
                                     <form action="">
@@ -78,3 +78,5 @@
         </div>
     </div>
 </div>
+<script src="/js/handleDeleteFromBasket.js"></script>
+<script src="/js/handleUpdateInBasket.js"></script>
