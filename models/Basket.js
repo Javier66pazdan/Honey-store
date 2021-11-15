@@ -1,16 +1,32 @@
 const { JARS } = require('../data/honey-jars');
+const { Product } = require('./Product');
 
 class Basket {
   constructor() {
     this.basket = [{ id: 1, quantity: 2 }, { id: 3, quantity: 3 }];
   }
 
-  add(product) {
-    this.basket.push(product);
+  add(id, quantity = 1) {
+    this.basket.push(new Product(
+      id,
+      quantity,
+    ));
   }
 
   getAll() {
-    return this.basket;
+    const jarsInBasket = [];
+    this.basket.forEach((obj) => {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const [, singleJar] of Object.entries(JARS)) {
+        if (singleJar.id === obj.id) {
+          jarsInBasket.push({
+            quantity: obj.quantity,
+            ...singleJar,
+          });
+        }
+      }
+    });
+    return jarsInBasket;
   }
 
   delete(id, quantity) {

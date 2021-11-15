@@ -1,3 +1,5 @@
+@use '../utilities/variables' as *;
+
 .store-container {
   margin: 3rem;
 
@@ -8,8 +10,8 @@
 }
 
 .page-title {
-  color: #8f3e3f;
-  font-size: 58px;
+  color: $secondary-color;
+  font-size: $page-title-size;
 }
 
 .product-thumbnail-wrapper {
@@ -49,7 +51,7 @@
 }
 
 .product-after-shop-loop a {
-  color: #8f3e3f;
+  color: $secondary-color;
   font-size: 1.3rem;
   text-transform: uppercase;
 }

@@ -1,3 +1,5 @@
+@use '../utilities/variables' as *;
+
 .login-section, .register-section {
   max-width: 550px;
   margin: 3rem auto;
@@ -7,7 +9,7 @@
   position: relative;
 
   h4 {
-    font-weight: 600;
+    font-weight: $text-weight;
     line-height: 32px;
     font-size: 2rem;
     margin-bottom: 16px;
@@ -33,7 +35,7 @@
 }
 
 .form button {
-  font-weight: 600;
+  font-weight: $text-weight;
   text-align: center;
   border: none;
   border-radius: 4px;

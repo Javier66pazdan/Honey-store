@@ -1,3 +1,5 @@
+@use '../utilities/variables' as *;
+
 .jar-image {
   display: block;
   max-width: 100%;
@@ -6,7 +8,7 @@
 }
 
 .jar-title, .jar-price {
-  color: #8f3e3f;
+  color: $secondary-color;
 }
 
 .jar-title {
@@ -19,7 +21,7 @@
 }
 
 .product-nav button{
-  color: #8f3e3f;
+  color: $secondary-color;
   padding: 15px;
   font-weight: 700;
   font-size: 1.2rem;

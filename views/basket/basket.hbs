@@ -1,16 +1,80 @@
 <div class="container basket-container">
-    <h2>Twoje produkty:</h2>
+    <h2>Koszyk</h2>
     {{#unless products}}
         <h5>Dodaj produkty do koszyka, aby zobaczyć jego zawartość.</h5>
     {{/unless}}
-    <p>
-        <ul>
-        {{#each products}}
-            <li>
-                {{id}} oraz nazwa {{quantity}}
-            </li>
-        {{/each}}
-        </ul>
-    <h2>{{sum}}</h2>
-    </p>
+    <div class="row">
+        <div class="col-md-8">
+            <form action="" class="cart-form">
+                {{#each products}}
+                    <table class="cart-table">
+                        <thead></thead>
+                        <tbody>
+                            <tr class="cart-table-row">
+                                <td class="product-remove">
+                                    <span class="remove"><a href="">x</a></span>
+                                </td>
+                                <td class="product-thumbnail">
+                                    <img src="{{img}}" alt="{{title}}">
+                                </td>
+                                <td class="product-name">
+                                    {{title}}
+                                </td>
+                                <td class="product-price">
+                                    {{priceify price}}
+                                </td>
+                                <td class="product-quantity">
+                                    <input type="number" value="{{quantity}}" onkeyup="this.value=this.value.replace(/[^\d]/,'')" step="1" min="0" max="30" title="Ilość" size="3" inputmode="numeric" placeholder>
+                                </td>
+                                <td class="product-total">
+                                    <form action="">
+                                        {{sumOfProducts quantity price}} zł
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                {{/each}}
+            </form>
+        </div>
+        <div class="col-md-4">
+            <div class="cart-collaterals">
+                <h6>Podsumowanie koszyka</h6>
+                <table class="summary-table">
+                    <tbody>
+                        <tr class="cart-subtotal">
+                            <th>Podsuma</th>
+                            <td>{{sum}} zł</td>
+                        </tr>
+                        <tr class="shipping-row">
+                            <th>Wysyłka</th>
+                            <td>
+                                <ul class="shipping-methods">
+                                    <li>
+                                        <input type="radio" id="shipping_method_1" name="shipping_method[0]" data-index="0" class="shipping_method" checked="checked">
+                                        <label for="shipping_method_1">Paczkomaty InPost: 9.99 zł</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="shipping_method[0]" id="shipping_method_2" data-index="0" class="shipping_method">
+                                        <label for="shipping_method_2">Kurier InPost: zł</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_3" class="shipping_method">
+                                        <label for="shipping_method_3">Kurier DHL: 13.99 zł</label>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="order-total">
+                            <th>łącznie</th>
+                            <td>{{sum}} zł</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="proceed-to-checkout">
+                    <a href=""><button>Przejdź do płatności</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
